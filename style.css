@@ -2,7 +2,7 @@
     --sidebar-bg-color: rgb(47, 48, 70);
     --header-bg-color: rgb(11, 11, 37);
     --card-area-bg-color: rgb(23, 20, 41);
-    --shadow-color: rgba(0, 20, 109, 0.87);
+    --shadow-color: rgba(0, 3, 19, 0.87);
 }
 
 html,
@@ -57,8 +57,48 @@ body {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template: 50% 50%/ 60% 40%;
+    grid-template: 50% 50%/ 40% 60%;
 }
+
+.password {
+    display: grid;
+    grid-template: 100% / 20% 80%;
+    justify-items: center;
+    align-items: center;
+}
+
+.password button {
+    border-radius: 100%;
+    border-style: none;
+    height: 3rem;
+    width: 3rem;
+    justify-self: end;
+    color: rgb(155, 233, 233);
+    background-color: rgb(41, 40, 116);
+}
+.password button:active {
+    background-color: rgb(45, 43, 150);
+}
+
+.password form {
+    justify-self: center;
+    width: 90%;
+}
+.password input {
+    width: 100%;
+    height: 35px;
+    background-color: rgb(58, 58, 104);
+    border-style: solid;
+    border-color: rgb(44, 40, 100);
+    border-radius: 15px;
+    color: rgb(212, 212, 212);
+    box-shadow: inset 0px 2px 5px 2px rgba(7, 3, 17, 0.87);
+}
+.password input:focus{
+    outline: none;
+    border: 2px solid rgb(135, 135, 253)
+}
+
 
 .card-area {
     height: 80%;

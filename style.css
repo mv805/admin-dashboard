@@ -2,9 +2,10 @@
     --sidebar-bg-color: rgb(47, 48, 70);
     --header-bg-color: rgb(11, 11, 37);
     --card-area-bg-color: rgb(23, 20, 41);
-    --shadow-color: rgba(0, 3, 19, 0.87);
+    --shadow-color: rgba(1, 2, 14, 0.87);
     --main-text-color: rgb(230, 211, 255);
-    --card-bg-color: rgb(70, 52, 92);
+    --card-bg-color: rgb(46, 41, 73);
+    --sidebar-and-font-text-color: rgb(181, 161, 199);
 }
 
 html,
@@ -16,7 +17,7 @@ body {
 body {
     background-color: rgb(36, 36, 36);
     display: grid;
-    grid-template: 100% / 20% 80%;
+    grid-template: 100% / 15% 85%;
     margin: 0;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
@@ -27,9 +28,10 @@ body {
     background-color: var(--sidebar-bg-color);
     z-index: 3;
     display: grid;
-    color: rgb(181, 161, 199);
-    grid-template: repeat(12, 50px) / 30% 70%;
+    color: var(--sidebar-and-font-text-color);
+    grid-template: repeat(12, 50px) / 20% 80%;
     align-items: center;
+    padding-left: 1rem;
 }
 
 .sidebar>p:first-of-type {
@@ -170,11 +172,16 @@ body {
 }
 
 .card-section-title {
-    font-weight: 700;
+    font-weight: 400;
     color: var(--main-text-color);
     font-size: 1.25rem;
     align-self: center;
-    padding-left: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+.card-area >h1:first-of-type {
+    padding-left: 1.5rem;
 }
 
 .project-header {
@@ -192,7 +199,7 @@ body {
 .card-zone-main {
     grid-area: projects;
     display: grid;
-    grid-template: repeat(3, 1fr) / 1fr 1fr;
+    grid-template: repeat(3, minmax(50px, 33%)) / 1fr 1fr;
     gap: 1.5rem;
     margin: 0 1.5rem;
 }
@@ -210,4 +217,83 @@ body {
 .basic-card-layout {
     background-color: var(--card-bg-color);
     border-radius: 1rem;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 3px 5px 5px 2px var(--shadow-color);
+    color: var(--sidebar-and-font-text-color);
+}
+
+.basic-card-layout:hover {
+    background-color: rgb(36, 36, 78);
+    transform: translateY(-.25rem);
+    border-color: rgb(153, 145, 167);
+    
+}
+
+.card {
+    border-left: .75rem solid rgb(82, 52, 99);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1rem;
+    padding: 0 1.5rem;
+}
+.card-footer {
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
+    column-gap: 1.5rem;
+}
+
+.card h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    color: var(--main-text-color);
+}
+
+.card p {
+    line-height: 1.5rem;
+}
+
+.card-zone-trending img{
+    border-radius: 100%;
+    border: 2px solid rgb(155, 62, 113);
+    overflow: hidden;
+    height: 4rem;
+    width: 4rem;
+}
+
+.card-zone-trending {
+    display: grid;
+    grid-template: repeat(4, 1fr) / 30% 80%;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.card-zone-trending img + div {
+    justify-self: left;
+}
+.card-zone-trending h1, .card-zone-announcements h1 {
+    font-weight: 700;
+    color: var(--main-text-color);
+    line-height: 2rem;
+}
+
+.card-zone-announcements{
+    display: grid;
+    grid-template: 1fr .1fr 1fr .1fr 1fr / 100%;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 2rem;
+    
+}
+
+.card-zone-announcements div {
+    max-height: 100%;
+}
+
+hr {
+    width: 50%;
+    border: 1px solid var(--sidebar-and-font-text-color);
 }
